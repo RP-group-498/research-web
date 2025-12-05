@@ -19,19 +19,20 @@ export default function DownloadCTA() {
       <div className="flex flex-wrap gap-6 justify-center relative z-10">
         <a 
           href="#"
-          className="inline-flex items-center gap-3 px-8 py-4 bg-white text-[#2563EB] rounded-lg font-semibold text-lg transition-all hover:shadow-xl shadow-md"
+          className="inline-flex items-center gap-3 px-8 py-4 bg-white text-[#2563EB] font-bold text-lg transition-all border-4 border-black brutal-shadow-lg hover:brutal-shadow-hover hover:-translate-x-1 hover:-translate-y-1"
         >
           <span className="text-2xl">🍎</span> App Store
         </a>
         <a 
           href="#"
-          className="inline-flex items-center gap-3 px-8 py-4 bg-white text-[#E91E8C] rounded-full font-bold text-lg transition-all hover:-translate-y-2 hover:shadow-2xl hover:shadow-black/30"
+          className="inline-flex items-center gap-3 px-8 py-4 bg-[#FFD700] text-black font-bold text-lg transition-all border-4 border-black brutal-shadow-lg hover:brutal-shadow-hover hover:-translate-x-1 hover:-translate-y-1"
         >
           <span className="text-2xl">🤖</span> Google Play
         </a>
         <a 
           href="#"
-          className="inline-flex items-center gap-3 px-8 py-4 bg-transparent border-2 border-white text-white rounded-full font-bold text-lg transition-all hover:-translate-y-2 hover:bg-white hover:text-[#E91E8C]"
+          className="inline-flex items-center gap-3 px-8 py-4 bg-[#E91E8C] text-white font-bold text-lg transition-all border-4 border-white brutal-shadow-lg hover:translate-x-1 hover:translate-y-1"
+          style={{ boxShadow: '8px 8px 0px #fff' }}
         >
           <span className="text-2xl">🌐</span> Web App
         </a>

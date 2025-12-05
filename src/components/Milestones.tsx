@@ -80,11 +80,11 @@ export default function Milestones() {
           >
             {/* Content */}
             <div className={`w-full md:w-[45%] pl-16 md:pl-0 ${index % 2 === 0 ? 'md:pl-8' : 'md:pr-8 md:text-right'}`}>
-              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 hover:bg-white/15 transition-all hover:scale-[1.02]">
-                <span className="font-bebas text-sm text-[#FF6BB3] tracking-[2px]">
+              <div className="bg-white border-4 border-black p-8 brutal-shadow transition-all hover:brutal-shadow-hover hover:-translate-x-1 hover:-translate-y-1">
+                <span className="font-bebas text-sm text-[#E91E8C] tracking-[2px] uppercase">
                   {milestone.date}
                 </span>
-                <h3 className="font-bebas text-xl text-white mt-2">
+                <h3 className="font-bebas text-xl text-[#1E293B] mt-2 uppercase">
                   {milestone.title}
                 </h3>
               </div>
@@ -97,13 +97,12 @@ export default function Milestones() {
       </div>
 
       {/* Progress Bar */}
-      <div className="max-w-4xl mx-auto mt-20 bg-white/10 rounded-3xl p-10">
-        <div className="h-8 bg-white/20 rounded-full relative overflow-hidden mb-6">
+      <div className="max-w-4xl mx-auto mt-20 bg-white border-4 border-black p-10 brutal-shadow-lg">
+        <div className="h-8 bg-gray-200 border-3 border-black relative overflow-hidden mb-6">
           <div 
-            className="h-full rounded-full animate-progress-pulse"
+            className="h-full bg-[#FFD700] border-r-3 border-black"
             style={{
-              width: '65%',
-              background: 'linear-gradient(90deg, #E91E8C, #FF6BB3)'
+              width: '65%'
             }}
           />
         </div>
@@ -111,8 +110,8 @@ export default function Milestones() {
         <div className="flex justify-between flex-wrap gap-3">
           {progressMarkers.map((marker, index) => (
             <div key={index} className="text-center flex-1 min-w-[60px]">
-              <span className="block text-xs font-semibold text-[#FF6BB3]">{marker.label}</span>
-              <span className="block text-xs text-white/60">{marker.short}</span>
+              <span className="block text-xs font-bold text-[#1E293B] uppercase">{marker.label}</span>
+              <span className="block text-xs text-[#64748B] font-medium">{marker.short}</span>
             </div>
           ))}
         </div>

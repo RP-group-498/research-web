@@ -38,36 +38,27 @@ export default function Contact() {
           <div className="space-y-6">
             <div className="flex items-center gap-4">
               <div 
-                className="w-12 h-12 rounded-xl flex items-center justify-center text-xl"
-                style={{
-                  background: 'linear-gradient(135deg, #FF6BB3, #E91E8C)'
-                }}
+                className="w-12 h-12 flex items-center justify-center text-xl bg-[#FFD700] border-3 border-black brutal-shadow-sm"
               >
                 📧
               </div>
-              <span className="text-[#6B4E9B]">focus.research@sliit.lk</span>
+              <span className="text-[#1E293B] font-medium">focus.research@sliit.lk</span>
             </div>
             <div className="flex items-center gap-4">
               <div 
-                className="w-12 h-12 rounded-xl flex items-center justify-center text-xl"
-                style={{
-                  background: 'linear-gradient(135deg, #FF6BB3, #E91E8C)'
-                }}
+                className="w-12 h-12 flex items-center justify-center text-xl bg-[#E91E8C] border-3 border-black brutal-shadow-sm"
               >
                 📍
               </div>
-              <span className="text-[#6B4E9B]">SLIIT, Malabe, Sri Lanka</span>
+              <span className="text-[#1E293B] font-medium">SLIIT, Malabe, Sri Lanka</span>
             </div>
             <div className="flex items-center gap-4">
               <div 
-                className="w-12 h-12 rounded-xl flex items-center justify-center text-xl"
-                style={{
-                  background: 'linear-gradient(135deg, #FF6BB3, #E91E8C)'
-                }}
+                className="w-12 h-12 flex items-center justify-center text-xl bg-[#C490B8] border-3 border-black brutal-shadow-sm"
               >
                 📱
               </div>
-              <span className="text-[#6B4E9B]">+94 11 754 4801</span>
+              <span className="text-[#1E293B] font-medium">+94 11 754 4801</span>
             </div>
           </div>
         </div>
@@ -75,46 +66,43 @@ export default function Contact() {
         {/* Contact Form */}
         <form 
           onSubmit={handleSubmit}
-          className="bg-white rounded-3xl p-10 shadow-xl shadow-[#C490B8]/10"
+          className="bg-white p-10 border-4 border-black brutal-shadow-lg"
         >
           <div className="mb-8">
-            <label className="block text-[#6B4E9B] font-medium mb-2">Your Name</label>
+            <label className="block text-[#1E293B] font-bold mb-2 uppercase text-sm">Your Name</label>
             <input
               type="text"
               value={formData.name}
               onChange={(e) => setFormData({ ...formData, name: e.target.value })}
               placeholder="Enter your name"
               required
-              className="w-full px-5 py-4 border-2 border-[#F0E0F5] rounded-xl font-poppins text-base transition-all focus:outline-none focus:border-[#E91E8C] focus:shadow-lg focus:shadow-[#E91E8C]/10"
+              className="w-full px-5 py-4 border-3 border-black font-poppins text-base transition-all focus:outline-none focus:ring-4 focus:ring-[#FFD700]"
             />
           </div>
           <div className="mb-8">
-            <label className="block text-[#6B4E9B] font-medium mb-2">Email Address</label>
+            <label className="block text-[#1E293B] font-bold mb-2 uppercase text-sm">Email Address</label>
             <input
               type="email"
               value={formData.email}
               onChange={(e) => setFormData({ ...formData, email: e.target.value })}
               placeholder="Enter your email"
               required
-              className="w-full px-5 py-4 border-2 border-[#F0E0F5] rounded-xl font-poppins text-base transition-all focus:outline-none focus:border-[#E91E8C] focus:shadow-lg focus:shadow-[#E91E8C]/10"
+              className="w-full px-5 py-4 border-3 border-black font-poppins text-base transition-all focus:outline-none focus:ring-4 focus:ring-[#FFD700]"
             />
           </div>
           <div className="mb-6">
-            <label className="block text-[#6B4E9B] font-medium mb-2">Message</label>
+            <label className="block text-[#1E293B] font-bold mb-2 uppercase text-sm">Message</label>
             <textarea
               value={formData.message}
               onChange={(e) => setFormData({ ...formData, message: e.target.value })}
               placeholder="Write your message..."
               rows={4}
-              className="w-full px-5 py-4 border-2 border-[#F0E0F5] rounded-xl font-poppins text-base transition-all resize-none focus:outline-none focus:border-[#E91E8C] focus:shadow-lg focus:shadow-[#E91E8C]/10"
+              className="w-full px-5 py-4 border-3 border-black font-poppins text-base transition-all resize-none focus:outline-none focus:ring-4 focus:ring-[#FFD700]"
             />
           </div>
           <button
             type="submit"
-            className="w-full py-4 rounded-xl font-bebas text-xl tracking-wider text-white transition-all hover:-translate-y-1 hover:shadow-xl hover:shadow-[#E91E8C]/30"
-            style={{
-              background: 'linear-gradient(135deg, #E91E8C, #C490B8)'
-            }}
+            className="w-full py-4 font-bebas text-xl tracking-wider text-white transition-all bg-[#E91E8C] border-3 border-black brutal-shadow hover:brutal-shadow-hover hover:-translate-x-1 hover:-translate-y-1"
           >
             Send Message
           </button>

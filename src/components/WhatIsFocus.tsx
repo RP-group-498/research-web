@@ -111,31 +111,31 @@ export default function WhatIsFocus() {
           <div
             key={index}
             ref={(el) => { cardsRef.current[index] = el; }}
-            className="bg-white rounded-2xl p-8 border border-gray-200 shadow-sm transition-all duration-700 ease-out opacity-0 translate-y-12 hover:shadow-lg hover:border-[#E91E8C] relative overflow-hidden group"
+            className="bg-white p-8 border-4 border-black brutal-shadow transition-all duration-700 ease-out opacity-0 translate-y-12 hover:brutal-shadow-hover hover:translate-x-[-2px] hover:translate-y-[-2px] relative overflow-hidden group"
             style={{ transitionDelay: `${index * 100}ms` }}
           >
-            {/* Top accent line */}
-            <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#E91E8C] to-[#FF6BB3]" />
+            {/* Top accent bar */}
+            <div className="absolute top-0 left-0 right-0 h-2 bg-[#E91E8C]" />
             
             {/* Icon */}
-            {/* <div 
-              className="w-14 h-14 rounded-xl flex items-center justify-center text-2xl mb-6 bg-[#F0C0D8]/30"
+            <div 
+              className="w-14 h-14 flex items-center justify-center text-2xl mb-6 bg-[#FFD700] border-3 border-black"
             >
               {item.icon}
-            </div> */}
+            </div>
 
-            <h3 className="font-bold text-xl text-[#1E293B] mb-4 tracking-tight">
+            <h3 className="font-bold text-xl text-[#1E293B] mb-4 tracking-tight uppercase">
               {item.title}
             </h3>
             
-            <p className="text-[#64748B] leading-relaxed text-sm mb-6">
+            <p className="text-[#64748B] leading-relaxed text-sm mb-6 font-medium">
               {item.description}
             </p>
 
             <ul className="space-y-3">
               {item.points.map((point, idx) => (
-                <li key={idx} className="flex items-start gap-2 text-[#6B4E9B] text-sm">
-                  <span className="text-[#E91E8C] mt-0.5">◉</span>
+                <li key={idx} className="flex items-start gap-2 text-[#1E293B] text-sm font-medium">
+                  <span className="text-[#E91E8C] mt-0.5 text-lg font-bold">■</span>
                   <span>{point}</span>
                 </li>
               ))}

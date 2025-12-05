@@ -39,13 +39,13 @@ export default function HeroSection() {
         <div className="flex gap-4 justify-center mt-10 flex-wrap px-4">
           <a 
             href="#what-is-focus"
-            className="px-8 py-3.5 bg-[#E91E8C] text-white rounded-lg font-semibold hover:bg-[#D01675] transition-all shadow-sm hover:shadow-md"
+            className="px-8 py-3.5 bg-[#E91E8C] text-white font-semibold border-3 border-black brutal-shadow transition-all hover:brutal-shadow-hover hover:translate-x-[-2px] hover:translate-y-[-2px]"
           >
             Learn More
           </a>
           <a 
             href="#downloads"
-            className="px-8 py-3.5 bg-white border-2 border-[#E91E8C] text-[#E91E8C] rounded-lg font-semibold hover:bg-[#E91E8C] hover:text-white transition-all shadow-sm"
+            className="px-8 py-3.5 bg-[#FFD700] text-black border-3 border-black font-bold brutal-shadow transition-all hover:brutal-shadow-hover hover:translate-x-[-2px] hover:translate-y-[-2px]"
           >
             Download
           </a>

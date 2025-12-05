@@ -2,15 +2,17 @@ import Link from 'next/link';
 
 export default function Footer() {
   return (
-    <footer className="bg-[#1E293B] text-white py-20 px-4 md:px-8 lg:px-16">
+    <footer className="bg-[#1E293B] text-white py-20 px-4 md:px-8 lg:px-16 border-t-8 border-black">
       <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16">
         {/* Brand */}
         <div>
           <Link href="/" className="flex items-center gap-2 mb-6">
-            <span className="text-2xl">🧠</span>
-            <span className="font-bebas text-xl">FOCUS</span>
+            <div className="bg-[#FFD700] border-3 border-white p-2">
+              <span className="text-2xl">🧠</span>
+            </div>
+            <span className="font-bebas text-xl uppercase">FOCUS</span>
           </Link>
-          <p className="text-white/60 text-sm leading-relaxed">
+          <p className="text-white/80 text-sm leading-relaxed font-medium">
             A cognitive science-backed productivity application designed to help you overcome procrastination 
             and achieve peak mental performance.
           </p>
@@ -18,7 +20,7 @@ export default function Footer() {
 
         {/* Quick Links */}
         <div>
-          <h4 className="font-semibold text-base text-white mb-6">Quick Links</h4>
+          <h4 className="font-bebas text-lg text-[#FFD700] mb-6 uppercase">Quick Links</h4>
           <div className="flex flex-col gap-3">
             <Link href="#what-is-focus" className="text-white/60 text-sm hover:text-[#FF6BB3] transition-colors">
               About Focus
@@ -37,7 +39,7 @@ export default function Footer() {
 
         {/* Research */}
         <div>
-          <h4 className="font-semibold text-base text-white mb-6">Research</h4>
+          <h4 className="font-bebas text-lg text-[#FFD700] mb-6 uppercase">Research</h4>
           <div className="flex flex-col gap-3">
             <Link href="#" className="text-white/60 text-sm hover:text-[#FF6BB3] transition-colors">
               Publications
@@ -56,7 +58,7 @@ export default function Footer() {
 
         {/* Connect */}
         <div>
-          <h4 className="font-semibold text-base text-white mb-6">Connect</h4>
+          <h4 className="font-bebas text-lg text-[#FFD700] mb-6 uppercase">Connect</h4>
           <div className="flex flex-col gap-3">
             <Link href="#" className="text-white/60 text-sm hover:text-[#FF6BB3] transition-colors">
               GitHub
@@ -74,8 +76,8 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="max-w-6xl mx-auto mt-16 pt-10 border-t border-white/10 text-center">
-        <p className="text-white/50 text-sm">
+      <div className="max-w-6xl mx-auto mt-16 pt-10 border-t-4 border-white text-center">
+        <p className="text-white/90 text-sm font-bold">
           &copy; 2024 Focus Research Project. Sri Lanka Institute of Information Technology. All rights reserved.
         </p>
       </div>

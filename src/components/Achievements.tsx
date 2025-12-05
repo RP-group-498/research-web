@@ -68,14 +68,14 @@ export default function Achievements() {
           <div
             key={index}
             ref={(el) => { cardsRef.current[index] = el; }}
-            className="bg-white/10 backdrop-blur-sm rounded-3xl p-10 text-center transition-all duration-700 ease-out opacity-0 scale-90 hover:bg-white/15 hover:scale-105 border border-white/10 hover:border-[#E91E8C]"
+            className="bg-[#FFD700] border-4 border-black p-10 text-center transition-all duration-700 ease-out opacity-0 scale-90 brutal-shadow hover:brutal-shadow-hover hover:-translate-x-1 hover:-translate-y-1"
             style={{ transitionDelay: `${index * 100}ms` }}
           >
             <div className="text-5xl mb-6">{item.icon}</div>
-            <div className="font-bebas text-4xl md:text-5xl text-[#FF6BB3] leading-none mb-3">
+            <div className="font-bebas text-4xl md:text-5xl text-[#1E293B] leading-none mb-3">
               {item.number}
             </div>
-            <p className="text-sm text-white/80">{item.label}</p>
+            <p className="text-sm text-[#1E293B] font-bold uppercase">{item.label}</p>
           </div>
         ))}
       </div>

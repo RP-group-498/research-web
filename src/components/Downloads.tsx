@@ -70,28 +70,28 @@ export default function Downloads() {
           <div
             key={index}
             ref={(el) => { cardsRef.current[index] = el; }}
-            className="w-64 rounded-2xl p-8 text-center transition-all duration-700 ease-out opacity-0 translate-y-8 hover:shadow-lg hover:border-[#E91E8C] border border-gray-200 bg-white"
+            className="w-64 border-4 border-black p-8 text-center transition-all duration-700 ease-out opacity-0 translate-y-8 brutal-shadow hover:brutal-shadow-hover hover:-translate-x-1 hover:-translate-y-1 bg-white"
             style={{
               transitionDelay: `${index * 100}ms`
             }}
           >
             <div 
-              className="w-20 h-20 rounded-xl flex items-center justify-center text-4xl mx-auto mb-6 bg-[#F0C0D8]/30"
+              className="w-20 h-20 flex items-center justify-center text-4xl mx-auto mb-6 bg-[#FFD700] border-3 border-black"
             >
               {item.icon}
             </div>
 
-            <h3 className="font-bold text-xl text-[#1E293B] mb-3">
+            <h3 className="font-bold text-xl text-[#1E293B] mb-3 uppercase">
               {item.title}
             </h3>
             
-            <p className="text-[#64748B] text-sm mb-8 leading-relaxed">
+            <p className="text-[#64748B] text-sm mb-8 leading-relaxed font-medium">
               {item.description}
             </p>
 
             <a 
               href={item.link}
-              className="inline-block px-6 py-3 bg-[#E91E8C] text-white rounded-lg font-semibold hover:bg-[#D01675] transition-all shadow-sm hover:shadow-md"
+              className="inline-block px-6 py-3 bg-[#E91E8C] text-white font-bold border-3 border-black brutal-shadow-sm hover:brutal-shadow transition-all uppercase text-sm"
             >
               {item.buttonText}
             </a>

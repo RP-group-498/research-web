@@ -19,16 +19,15 @@ export default function Navigation() {
     <nav 
       className={`fixed top-0 left-0 right-0 z-[1000] px-4 md:px-8 lg:px-16 py-4 flex justify-between items-center transition-all duration-300 ${
         scrolled 
-          ? 'bg-white shadow-md' 
-          : 'bg-white/95'
-      } backdrop-blur-sm border-b border-gray-100`}
+          ? 'bg-white border-b-4 border-black' 
+          : 'bg-white/95 border-b-3 border-gray-300'
+      } backdrop-blur-sm`}
     >
       <Link href="/" className="flex items-center gap-2 no-underline">
-        <div className="relative w-11 h-11">
-          <span className="text-3xl">🧠</span>
-          <span className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-sm text-[#C490B8]">⊕</span>
+        <div className="w-11 h-11 bg-[#FFD700] border-3 border-black flex items-center justify-center brutal-shadow-sm">
+          <span className="text-2xl">🧠</span>
         </div>
-        <span className="font-bebas text-2xl text-[#1E293B]">FOCUS</span>
+        <span className="font-bebas text-2xl text-[#1E293B] uppercase">FOCUS</span>
       </Link>
 
       {/* Desktop Navigation */}
@@ -44,13 +43,13 @@ export default function Navigation() {
         </Link>
         <Link 
           href="#downloads" 
-          className="px-6 py-2.5 bg-white border border-[#CBD5E1] rounded-lg text-[#64748B] font-medium hover:border-[#E91E8C] hover:text-[#E91E8C] transition-all ml-2"
+          className="px-6 py-2.5 bg-white border-3 border-black text-[#1E293B] font-bold hover:bg-[#FFD700] transition-all ml-2 brutal-shadow-sm"
         >
           Downloads
         </Link>
         <Link 
           href="#contact" 
-          className="px-6 py-2.5 bg-[#E91E8C] rounded-lg text-white font-medium hover:bg-[#D01675] transition-all"
+          className="px-6 py-2.5 bg-[#E91E8C] text-white font-bold border-3 border-black brutal-shadow-sm hover:brutal-shadow transition-all"
         >
           Contact
         </Link>

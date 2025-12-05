@@ -69,37 +69,28 @@ export default function AboutUs() {
           <div
             key={index}
             ref={(el) => { cardsRef.current[index] = el; }}
-            className="bg-white rounded-3xl p-8 text-center transition-all duration-700 ease-out opacity-0 translate-y-8 hover:-translate-y-3 hover:shadow-2xl hover:shadow-[#E91E8C]/20 relative overflow-hidden"
+            className="bg-white border-4 border-black p-8 text-center transition-all duration-700 ease-out opacity-0 translate-y-8 brutal-shadow hover:brutal-shadow-hover hover:-translate-x-1 hover:-translate-y-1 relative overflow-hidden"
             style={{ transitionDelay: `${index * 100}ms` }}
           >
-            {/* Top gradient */}
-            <div 
-              className="absolute top-0 left-0 right-0 h-24 opacity-30"
-              style={{
-                background: 'linear-gradient(135deg, #FF6BB3, #C490B8)'
-              }}
-            />
+            {/* Top bar */}
+            <div className="absolute top-0 left-0 right-0 h-3 bg-[#E91E8C]" />
 
             {/* Avatar */}
             <div 
-              className="w-28 h-28 rounded-full mx-auto mb-6 flex items-center justify-center text-5xl relative z-10 border-4 border-white"
-              style={{
-                background: 'linear-gradient(135deg, #F0C0D8, #E91E8C)',
-                boxShadow: '0 10px 30px rgba(233, 30, 140, 0.3)'
-              }}
+              className="w-28 h-28 mx-auto mb-6 flex items-center justify-center text-5xl relative z-10 border-4 border-black bg-[#FFD700]"
             >
               {member.emoji}
             </div>
 
-            <h3 className="font-bebas text-xl text-[#6B4E9B] mb-2">
+            <h3 className="font-bebas text-xl text-[#1E293B] mb-2 uppercase">
               {member.name}
             </h3>
             
-            <p className="text-[#E91E8C] text-sm font-medium mb-5">
+            <p className="text-[#E91E8C] text-sm font-bold mb-5 uppercase">
               {member.role}
             </p>
 
-            <p className="text-[#6B4E9B] text-sm leading-relaxed">
+            <p className="text-[#64748B] text-sm leading-relaxed font-medium">
               {member.bio}
             </p>
           </div>
@@ -108,11 +99,13 @@ export default function AboutUs() {
 
       {/* Supervisor */}
       <div className="text-center mt-20 px-4">
-        <h3 className="font-bebas text-2xl text-[#6B4E9B] mb-3">
-          Supervisor
-        </h3>
-        <p className="text-[#6B4E9B] mb-2">Dr. [Supervisor Name]</p>
-        <p className="text-[#E91E8C] text-sm">Department of Computer Science, SLIIT</p>
+        <div className="inline-block bg-[#FFD700] border-4 border-black brutal-shadow px-12 py-8">
+          <h3 className="font-bebas text-2xl text-[#1E293B] mb-3 uppercase">
+            Supervisor
+          </h3>
+          <p className="text-[#1E293B] mb-2 font-bold">Dr. [Supervisor Name]</p>
+          <p className="text-[#E91E8C] text-sm font-bold uppercase">Department of Computer Science, SLIIT</p>
+        </div>
       </div>
     </section>
   );
