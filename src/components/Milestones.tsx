@@ -54,15 +54,12 @@ export default function Milestones() {
   return (
     <section 
       id="milestones" 
-      className="py-24 px-4 md:px-8 lg:px-16 text-white"
-      style={{
-        background: 'linear-gradient(135deg, #4A2C7A 0%, #6B4E9B 100%)'
-      }}
+      className="py-24 px-4 md:px-8 lg:px-16 text-white bg-gradient-to-br from-[#1E293B] to-[#334155]"
     >
-      <h2 className="font-bebas text-5xl md:text-6xl lg:text-7xl text-white text-center mb-6">
+      <h2 className="font-bebas text-4xl md:text-5xl lg:text-6xl text-white text-center mb-4">
         Milestones
       </h2>
-      <p className="text-center text-[#FF6BB3] text-lg uppercase tracking-[2px] mb-20 px-4">
+      <p className="text-center text-[#FF6BB3] text-lg font-semibold tracking-tight mb-20 px-4">
         Our Research Journey
       </p>
 

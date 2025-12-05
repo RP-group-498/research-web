@@ -15,11 +15,18 @@ export default function BrainCharacter() {
       const brainCenterX = rect.left + rect.width / 2;
       const brainCenterY = rect.top + rect.height / 2;
       
-      const angle = Math.atan2(e.clientY - brainCenterY, e.clientX - brainCenterX);
-      const distance = Math.min(6, Math.hypot(e.clientX - brainCenterX, e.clientY - brainCenterY) / 50);
+      // Calculate the angle from brain center to mouse position
+      const deltaX = e.clientX - brainCenterX;
+      const deltaY = e.clientY - brainCenterY;
+      const angle = Math.atan2(deltaY, deltaX);
       
-      const translateX = Math.cos(angle) * distance;
-      const translateY = Math.sin(angle) * distance;
+      // Calculate distance with proper clamping
+      const distanceFromCenter = Math.sqrt(deltaX * deltaX + deltaY * deltaY);
+      const maxPupilMovement = 6;
+      const movementDistance = Math.min(maxPupilMovement, distanceFromCenter / 80);
+      
+      const translateX = Math.cos(angle) * movementDistance;
+      const translateY = Math.sin(angle) * movementDistance;
       
       leftPupilRef.current.style.transform = `translate(calc(-50% + ${translateX}px), calc(-50% + ${translateY}px))`;
       rightPupilRef.current.style.transform = `translate(calc(-50% + ${translateX}px), calc(-50% + ${translateY}px))`;

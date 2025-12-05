@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 export default function Footer() {
   return (
-    <footer className="bg-[#2D1B4E] text-white py-20 px-4 md:px-8 lg:px-16">
+    <footer className="bg-[#1E293B] text-white py-20 px-4 md:px-8 lg:px-16">
       <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16">
         {/* Brand */}
         <div>
@@ -18,18 +18,18 @@ export default function Footer() {
 
         {/* Quick Links */}
         <div>
-          <h4 className="font-bebas text-lg text-[#FF6BB3] mb-6">Quick Links</h4>
+          <h4 className="font-semibold text-base text-white mb-6">Quick Links</h4>
           <div className="flex flex-col gap-3">
-            <Link href="#what-is-focus" className="text-white/60 text-sm hover:text-[#E91E8C] transition-colors">
+            <Link href="#what-is-focus" className="text-white/60 text-sm hover:text-[#FF6BB3] transition-colors">
               About Focus
             </Link>
-            <Link href="#milestones" className="text-white/60 text-sm hover:text-[#E91E8C] transition-colors">
+            <Link href="#milestones" className="text-white/60 text-sm hover:text-[#FF6BB3] transition-colors">
               Milestones
             </Link>
-            <Link href="#downloads" className="text-white/60 text-sm hover:text-[#E91E8C] transition-colors">
+            <Link href="#downloads" className="text-white/60 text-sm hover:text-[#FF6BB3] transition-colors">
               Downloads
             </Link>
-            <Link href="#contact" className="text-white/60 text-sm hover:text-[#E91E8C] transition-colors">
+            <Link href="#contact" className="text-white/60 text-sm hover:text-[#FF6BB3] transition-colors">
               Contact
             </Link>
           </div>
@@ -37,18 +37,18 @@ export default function Footer() {
 
         {/* Research */}
         <div>
-          <h4 className="font-bebas text-lg text-[#FF6BB3] mb-6">Research</h4>
+          <h4 className="font-semibold text-base text-white mb-6">Research</h4>
           <div className="flex flex-col gap-3">
-            <Link href="#" className="text-white/60 text-sm hover:text-[#E91E8C] transition-colors">
+            <Link href="#" className="text-white/60 text-sm hover:text-[#FF6BB3] transition-colors">
               Publications
             </Link>
-            <Link href="#" className="text-white/60 text-sm hover:text-[#E91E8C] transition-colors">
+            <Link href="#" className="text-white/60 text-sm hover:text-[#FF6BB3] transition-colors">
               Methodology
             </Link>
-            <Link href="#about" className="text-white/60 text-sm hover:text-[#E91E8C] transition-colors">
+            <Link href="#about" className="text-white/60 text-sm hover:text-[#FF6BB3] transition-colors">
               Team
             </Link>
-            <Link href="#" className="text-white/60 text-sm hover:text-[#E91E8C] transition-colors">
+            <Link href="#" className="text-white/60 text-sm hover:text-[#FF6BB3] transition-colors">
               Supervisor
             </Link>
           </div>
@@ -56,18 +56,18 @@ export default function Footer() {
 
         {/* Connect */}
         <div>
-          <h4 className="font-bebas text-lg text-[#FF6BB3] mb-6">Connect</h4>
+          <h4 className="font-semibold text-base text-white mb-6">Connect</h4>
           <div className="flex flex-col gap-3">
-            <Link href="#" className="text-white/60 text-sm hover:text-[#E91E8C] transition-colors">
+            <Link href="#" className="text-white/60 text-sm hover:text-[#FF6BB3] transition-colors">
               GitHub
             </Link>
-            <Link href="#" className="text-white/60 text-sm hover:text-[#E91E8C] transition-colors">
+            <Link href="#" className="text-white/60 text-sm hover:text-[#FF6BB3] transition-colors">
               LinkedIn
             </Link>
-            <Link href="#" className="text-white/60 text-sm hover:text-[#E91E8C] transition-colors">
+            <Link href="#" className="text-white/60 text-sm hover:text-[#FF6BB3] transition-colors">
               Twitter
             </Link>
-            <Link href="#" className="text-white/60 text-sm hover:text-[#E91E8C] transition-colors">
+            <Link href="#" className="text-white/60 text-sm hover:text-[#FF6BB3] transition-colors">
               YouTube
             </Link>
           </div>

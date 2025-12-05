@@ -97,44 +97,38 @@ export default function WhatIsFocus() {
   return (
     <section 
       id="what-is-focus" 
-      className="py-24 px-4 md:px-8 lg:px-16"
-      style={{
-        background: 'linear-gradient(180deg, #E8E0F0 0%, #FFFFFF 50%, #E8E0F0 100%)'
-      }}
+      className="py-24 px-4 md:px-8 lg:px-16 bg-gray-50"
     >
-      <h2 className="font-bebas text-5xl md:text-6xl lg:text-7xl text-[#4A2C7A] text-center mb-6">
+      <h2 className="font-bebas text-4xl md:text-5xl lg:text-6xl text-[#1E293B] text-center mb-4">
         What is Focus?
       </h2>
-      <p className="text-center text-[#E91E8C] text-lg uppercase tracking-[2px] mb-20 px-4">
+      <p className="text-center text-[#E91E8C] text-lg font-semibold tracking-tight mb-20 px-4">
         Cognitive Science Meets Productivity
       </p>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 max-w-7xl mx-auto">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
         {researchData.map((item, index) => (
           <div
             key={index}
             ref={(el) => { cardsRef.current[index] = el; }}
-            className="bg-white rounded-3xl p-8 shadow-xl shadow-[#6B4E9B]/10 transition-all duration-700 ease-out opacity-0 translate-y-12 hover:-translate-y-2 hover:shadow-2xl hover:shadow-[#6B4E9B]/20 relative overflow-hidden group"
+            className="bg-white rounded-2xl p-8 border border-gray-200 shadow-sm transition-all duration-700 ease-out opacity-0 translate-y-12 hover:shadow-lg hover:border-[#E91E8C] relative overflow-hidden group"
             style={{ transitionDelay: `${index * 100}ms` }}
           >
-            {/* Top gradient line */}
-            <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#E91E8C] to-[#6B4E9B]" />
+            {/* Top accent line */}
+            <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#E91E8C] to-[#FF6BB3]" />
             
             {/* Icon */}
-            <div 
-              className="w-16 h-16 rounded-2xl flex items-center justify-center text-3xl mb-6 transition-transform group-hover:scale-110"
-              style={{
-                background: 'linear-gradient(135deg, #FF6BB3, #E91E8C)'
-              }}
+            {/* <div 
+              className="w-14 h-14 rounded-xl flex items-center justify-center text-2xl mb-6 bg-[#F0C0D8]/30"
             >
               {item.icon}
-            </div>
+            </div> */}
 
-            <h3 className="font-bebas text-2xl text-[#4A2C7A] mb-4 tracking-wide">
+            <h3 className="font-bold text-xl text-[#1E293B] mb-4 tracking-tight">
               {item.title}
             </h3>
             
-            <p className="text-[#6B4E9B] leading-relaxed text-sm mb-6">
+            <p className="text-[#64748B] leading-relaxed text-sm mb-6">
               {item.description}
             </p>
 

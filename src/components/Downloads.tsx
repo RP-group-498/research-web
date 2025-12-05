@@ -58,10 +58,10 @@ export default function Downloads() {
 
   return (
     <section id="downloads" className="py-24 px-4 md:px-8 lg:px-16 bg-white">
-      <h2 className="font-bebas text-5xl md:text-6xl lg:text-7xl text-[#4A2C7A] text-center mb-6">
+      <h2 className="font-bebas text-4xl md:text-5xl lg:text-6xl text-[#1E293B] text-center mb-4">
         Downloads
       </h2>
-      <p className="text-center text-[#E91E8C] text-lg uppercase tracking-[2px] mb-20 px-4">
+      <p className="text-center text-[#E91E8C] text-lg font-semibold tracking-tight mb-20 px-4">
         Access Our Research Documents
       </p>
 
@@ -70,32 +70,28 @@ export default function Downloads() {
           <div
             key={index}
             ref={(el) => { cardsRef.current[index] = el; }}
-            className="w-64 rounded-3xl p-8 text-center transition-all duration-700 ease-out opacity-0 translate-y-8 hover:-translate-y-4 hover:border-[#E91E8C] hover:shadow-2xl hover:shadow-[#E91E8C]/20 border-2 border-transparent"
+            className="w-64 rounded-2xl p-8 text-center transition-all duration-700 ease-out opacity-0 translate-y-8 hover:shadow-lg hover:border-[#E91E8C] border border-gray-200 bg-white"
             style={{
-              background: 'linear-gradient(135deg, #F5F0FA, #E8E0F0)',
               transitionDelay: `${index * 100}ms`
             }}
           >
             <div 
-              className="w-24 h-24 rounded-3xl flex items-center justify-center text-4xl mx-auto mb-6"
-              style={{
-                background: 'linear-gradient(135deg, #E91E8C, #4A2C7A)'
-              }}
+              className="w-20 h-20 rounded-xl flex items-center justify-center text-4xl mx-auto mb-6 bg-[#F0C0D8]/30"
             >
               {item.icon}
             </div>
 
-            <h3 className="font-bebas text-2xl text-[#4A2C7A] mb-3">
+            <h3 className="font-bold text-xl text-[#1E293B] mb-3">
               {item.title}
             </h3>
             
-            <p className="text-[#6B4E9B] text-sm mb-8 leading-relaxed">
+            <p className="text-[#64748B] text-sm mb-8 leading-relaxed">
               {item.description}
             </p>
 
             <a 
               href={item.link}
-              className="inline-block px-6 py-3 bg-[#E91E8C] text-white rounded-full font-semibold hover:bg-[#4A2C7A] transition-all hover:scale-105"
+              className="inline-block px-6 py-3 bg-[#E91E8C] text-white rounded-lg font-semibold hover:bg-[#D01675] transition-all shadow-sm hover:shadow-md"
             >
               {item.buttonText}
             </a>

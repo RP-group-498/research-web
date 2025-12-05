@@ -19,38 +19,38 @@ export default function Navigation() {
     <nav 
       className={`fixed top-0 left-0 right-0 z-[1000] px-4 md:px-8 lg:px-16 py-4 flex justify-between items-center transition-all duration-300 ${
         scrolled 
-          ? 'bg-[#F5F0FA]/98 shadow-lg shadow-[#6B4E9B]/10' 
-          : 'bg-[#F5F0FA]/90'
-      } backdrop-blur-md`}
+          ? 'bg-white shadow-md' 
+          : 'bg-white/95'
+      } backdrop-blur-sm border-b border-gray-100`}
     >
       <Link href="/" className="flex items-center gap-2 no-underline">
         <div className="relative w-11 h-11">
           <span className="text-3xl">🧠</span>
-          <span className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-sm text-[#4A2C7A]">⊕</span>
+          <span className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-sm text-[#C490B8]">⊕</span>
         </div>
-        <span className="font-bebas text-2xl text-[#E91E8C]">FOCUS</span>
+        <span className="font-bebas text-2xl text-[#1E293B]">FOCUS</span>
       </Link>
 
       {/* Desktop Navigation */}
-      <div className="hidden lg:flex gap-2 items-center">
-        <Link href="#what-is-focus" className="px-5 py-2 text-[#E91E8C] font-medium text-sm uppercase tracking-wide hover:text-[#4A2C7A] transition-colors">
+      <div className="hidden lg:flex gap-1 items-center">
+        <Link href="#what-is-focus" className="px-4 py-2 text-[#64748B] font-medium text-sm hover:text-[#E91E8C] transition-colors">
           What is Focus
         </Link>
-        <Link href="#milestones" className="px-5 py-2 text-[#E91E8C] font-medium text-sm uppercase tracking-wide hover:text-[#4A2C7A] transition-colors">
+        <Link href="#milestones" className="px-4 py-2 text-[#64748B] font-medium text-sm hover:text-[#E91E8C] transition-colors">
           Milestones
         </Link>
-        <Link href="#about" className="px-5 py-2 text-[#E91E8C] font-medium text-sm uppercase tracking-wide hover:text-[#4A2C7A] transition-colors">
+        <Link href="#about" className="px-4 py-2 text-[#64748B] font-medium text-sm hover:text-[#E91E8C] transition-colors">
           About Us
         </Link>
         <Link 
           href="#downloads" 
-          className="px-7 py-3 bg-white border-2 border-[#E91E8C] rounded-full text-[#E91E8C] font-semibold hover:bg-[#E91E8C] hover:text-white transition-all ml-2"
+          className="px-6 py-2.5 bg-white border border-[#CBD5E1] rounded-lg text-[#64748B] font-medium hover:border-[#E91E8C] hover:text-[#E91E8C] transition-all ml-2"
         >
           Downloads
         </Link>
         <Link 
           href="#contact" 
-          className="px-7 py-3 bg-[#E91E8C] border-2 border-[#E91E8C] rounded-full text-white font-semibold hover:bg-[#4A2C7A] hover:border-[#4A2C7A] transition-all"
+          className="px-6 py-2.5 bg-[#E91E8C] rounded-lg text-white font-medium hover:bg-[#D01675] transition-all"
         >
           Contact
         </Link>
@@ -61,27 +61,27 @@ export default function Navigation() {
         onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
         className="lg:hidden w-10 h-10 flex flex-col justify-center items-center gap-1.5"
       >
-        <span className={`w-6 h-0.5 bg-[#E91E8C] transition-all ${mobileMenuOpen ? 'rotate-45 translate-y-2' : ''}`} />
-        <span className={`w-6 h-0.5 bg-[#E91E8C] transition-all ${mobileMenuOpen ? 'opacity-0' : ''}`} />
-        <span className={`w-6 h-0.5 bg-[#E91E8C] transition-all ${mobileMenuOpen ? '-rotate-45 -translate-y-2' : ''}`} />
+        <span className={`w-6 h-0.5 bg-[#64748B] transition-all ${mobileMenuOpen ? 'rotate-45 translate-y-2' : ''}`} />
+        <span className={`w-6 h-0.5 bg-[#64748B] transition-all ${mobileMenuOpen ? 'opacity-0' : ''}`} />
+        <span className={`w-6 h-0.5 bg-[#64748B] transition-all ${mobileMenuOpen ? '-rotate-45 -translate-y-2' : ''}`} />
       </button>
 
       {/* Mobile Menu */}
       {mobileMenuOpen && (
-        <div className="absolute top-full left-0 right-0 bg-[#F5F0FA]/98 backdrop-blur-md p-8 flex flex-col gap-2 lg:hidden shadow-lg">
-          <Link href="#what-is-focus" onClick={() => setMobileMenuOpen(false)} className="py-3 text-[#E91E8C] font-medium uppercase tracking-wide">
+        <div className="absolute top-full left-0 right-0 bg-white backdrop-blur-sm p-8 flex flex-col gap-2 lg:hidden shadow-lg border-b border-gray-100">
+          <Link href="#what-is-focus" onClick={() => setMobileMenuOpen(false)} className="py-3 text-[#64748B] font-medium hover:text-[#E91E8C]">
             What is Focus
           </Link>
-          <Link href="#milestones" onClick={() => setMobileMenuOpen(false)} className="py-3 text-[#E91E8C] font-medium uppercase tracking-wide">
+          <Link href="#milestones" onClick={() => setMobileMenuOpen(false)} className="py-3 text-[#64748B] font-medium hover:text-[#E91E8C]">
             Milestones
           </Link>
-          <Link href="#about" onClick={() => setMobileMenuOpen(false)} className="py-3 text-[#E91E8C] font-medium uppercase tracking-wide">
+          <Link href="#about" onClick={() => setMobileMenuOpen(false)} className="py-3 text-[#64748B] font-medium hover:text-[#E91E8C]">
             About Us
           </Link>
-          <Link href="#downloads" onClick={() => setMobileMenuOpen(false)} className="py-3 text-[#E91E8C] font-medium uppercase tracking-wide">
+          <Link href="#downloads" onClick={() => setMobileMenuOpen(false)} className="py-3 text-[#64748B] font-medium hover:text-[#E91E8C]">
             Downloads
           </Link>
-          <Link href="#contact" onClick={() => setMobileMenuOpen(false)} className="py-3 text-[#E91E8C] font-medium uppercase tracking-wide">
+          <Link href="#contact" onClick={() => setMobileMenuOpen(false)} className="py-3 text-[#64748B] font-medium hover:text-[#E91E8C]">
             Contact
           </Link>
         </div>

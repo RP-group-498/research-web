@@ -20,7 +20,7 @@ export default function Preloader() {
       className={`fixed inset-0 z-[9999] flex items-center justify-center transition-all duration-500 ${
         loading ? 'opacity-100 visible' : 'opacity-0 invisible'
       }`}
-      style={{ background: '#4A2C7A' }}
+      style={{ background: '#6B4E9B' }}
     >
       <div 
         className="w-24 h-24 animate-preloader-pulse"
