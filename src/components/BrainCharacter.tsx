@@ -9,24 +9,20 @@ export default function BrainCharacter() {
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
-      if (!brainRef.current) return;
+      if (!brainRef.current || !leftPupilRef.current || !rightPupilRef.current) return;
       
       const rect = brainRef.current.getBoundingClientRect();
       const brainCenterX = rect.left + rect.width / 2;
       const brainCenterY = rect.top + rect.height / 2;
       
       const angle = Math.atan2(e.clientY - brainCenterY, e.clientX - brainCenterX);
-      const distance = Math.min(8, Math.hypot(e.clientX - brainCenterX, e.clientY - brainCenterY) / 30);
+      const distance = Math.min(6, Math.hypot(e.clientX - brainCenterX, e.clientY - brainCenterY) / 50);
       
       const translateX = Math.cos(angle) * distance;
       const translateY = Math.sin(angle) * distance;
       
-      if (leftPupilRef.current) {
-        leftPupilRef.current.style.transform = `translate(calc(-50% + ${translateX}px), calc(-50% + ${translateY}px))`;
-      }
-      if (rightPupilRef.current) {
-        rightPupilRef.current.style.transform = `translate(calc(-50% + ${translateX}px), calc(-50% + ${translateY}px))`;
-      }
+      leftPupilRef.current.style.transform = `translate(calc(-50% + ${translateX}px), calc(-50% + ${translateY}px))`;
+      rightPupilRef.current.style.transform = `translate(calc(-50% + ${translateX}px), calc(-50% + ${translateY}px))`;
     };
 
     window.addEventListener('mousemove', handleMouseMove);
@@ -34,7 +30,7 @@ export default function BrainCharacter() {
   }, []);
 
   return (
-    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-5">
+    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-0 pointer-events-none">
       <div 
         ref={brainRef}
         className="w-[250px] h-[250px] md:w-[400px] md:h-[400px] lg:w-[500px] lg:h-[500px] relative animate-brain-bounce"
@@ -59,175 +55,160 @@ export default function BrainCharacter() {
             `
           }}
         >
-          {/* Brain Gyri - Curly Folds Pattern - Left Hemisphere */}
-          <svg className="absolute inset-0 w-full h-full" viewBox="0 0 200 200" style={{ opacity: 0.7 }}>
-            {/* Top Left Gyri Cluster */}
+          {/* Brain Gyri - Realistic Wavy Folds */}
+          <svg className="absolute inset-0 w-full h-full" viewBox="0 0 200 200" style={{ opacity: 0.5 }}>
+            {/* Left Hemisphere - Wavy Lines */}
             <path 
-              d="M30 40 Q40 30, 50 40 Q60 50, 50 60 Q40 70, 30 60 Q20 50, 30 40" 
+              d="M20 30 Q25 25, 30 30 T40 30 T50 30 T60 30" 
               fill="none" 
-              stroke="#B080A8" 
+              stroke="#9060A0" 
+              strokeWidth="3.5"
+              strokeLinecap="round"
+            />
+            <path 
+              d="M15 45 Q20 40, 25 45 T35 45 T45 45 T55 45 T65 45" 
+              fill="none" 
+              stroke="#A070A8" 
               strokeWidth="3"
               strokeLinecap="round"
-              className="animate-gyri-pulse"
             />
             <path 
-              d="M45 25 Q55 15, 65 25 Q75 35, 65 45 Q55 55, 45 45 Q35 35, 45 25" 
+              d="M20 60 Q25 55, 30 60 T40 60 T50 60 T60 60 T70 60" 
               fill="none" 
-              stroke="#A070A0" 
-              strokeWidth="2.5"
+              stroke="#9060A0" 
+              strokeWidth="3.5"
               strokeLinecap="round"
-              style={{ animationDelay: '0.5s' }}
-              className="animate-gyri-pulse"
             />
             <path 
-              d="M25 55 Q35 45, 45 55 Q55 65, 45 75 Q35 85, 25 75 Q15 65, 25 55" 
+              d="M15 75 Q20 70, 25 75 T35 75 T45 75 T55 75" 
               fill="none" 
-              stroke="#C090B0" 
-              strokeWidth="2"
-              strokeLinecap="round"
-              style={{ animationDelay: '1s' }}
-              className="animate-gyri-pulse"
-            />
-            
-            {/* Upper Middle Gyri */}
-            <path 
-              d="M70 20 Q85 10, 100 20 Q115 30, 100 40 Q85 50, 70 40 Q55 30, 70 20" 
-              fill="none" 
-              stroke="#A878A0" 
+              stroke="#A870B0" 
               strokeWidth="3"
               strokeLinecap="round"
-              style={{ animationDelay: '0.3s' }}
-              className="animate-gyri-pulse"
             />
             <path 
-              d="M90 35 Q100 25, 115 35 Q130 45, 115 55 Q100 65, 90 55 Q75 45, 90 35" 
+              d="M10 90 Q15 85, 20 90 T30 90 T40 90 T50 90 T60 90" 
               fill="none" 
-              stroke="#B585A8" 
-              strokeWidth="2.5"
+              stroke="#9060A0" 
+              strokeWidth="3.5"
               strokeLinecap="round"
-              style={{ animationDelay: '0.7s' }}
-              className="animate-gyri-pulse"
             />
-            
-            {/* Top Right Gyri Cluster */}
             <path 
-              d="M130 25 Q145 15, 160 25 Q175 35, 160 50 Q145 60, 130 50 Q115 40, 130 25" 
+              d="M15 105 Q20 100, 25 105 T35 105 T45 105 T55 105" 
               fill="none" 
-              stroke="#A070A0" 
+              stroke="#A070A8" 
               strokeWidth="3"
               strokeLinecap="round"
-              style={{ animationDelay: '0.2s' }}
-              className="animate-gyri-pulse"
             />
             <path 
-              d="M150 40 Q165 30, 175 45 Q185 60, 170 70 Q155 80, 145 65 Q135 50, 150 40" 
-              fill="none" 
-              stroke="#B585A8" 
-              strokeWidth="2.5"
-              strokeLinecap="round"
-              style={{ animationDelay: '0.8s' }}
-              className="animate-gyri-pulse"
-            />
-            
-            {/* Middle Left Gyri */}
-            <path 
-              d="M20 80 Q35 70, 50 80 Q65 90, 50 105 Q35 115, 20 105 Q5 95, 20 80" 
-              fill="none" 
-              stroke="#C090B0" 
-              strokeWidth="2.5"
-              strokeLinecap="round"
-              style={{ animationDelay: '1.2s' }}
-              className="animate-gyri-pulse"
-            />
-            <path 
-              d="M40 95 Q55 85, 70 95 Q85 105, 70 120 Q55 130, 40 120 Q25 110, 40 95" 
-              fill="none" 
-              stroke="#A878A0" 
-              strokeWidth="2"
-              strokeLinecap="round"
-              style={{ animationDelay: '0.4s' }}
-              className="animate-gyri-pulse"
-            />
-            
-            {/* Center Gyri */}
-            <path 
-              d="M75 70 Q90 55, 110 70 Q125 85, 110 100 Q90 115, 75 100 Q60 85, 75 70" 
+              d="M20 120 Q25 115, 30 120 T40 120 T50 120 T60 120" 
               fill="none" 
               stroke="#9868A0" 
+              strokeWidth="3.5"
+              strokeLinecap="round"
+            />
+            <path 
+              d="M25 135 Q30 130, 35 135 T45 135 T55 135 T65 135" 
+              fill="none" 
+              stroke="#A070A8" 
               strokeWidth="3"
               strokeLinecap="round"
-              style={{ animationDelay: '0.6s' }}
-              className="animate-gyri-pulse"
-            />
-            
-            {/* Middle Right Gyri */}
-            <path 
-              d="M140 75 Q155 65, 170 80 Q185 95, 170 110 Q155 120, 140 110 Q125 100, 140 75" 
-              fill="none" 
-              stroke="#B080A8" 
-              strokeWidth="2.5"
-              strokeLinecap="round"
-              style={{ animationDelay: '1.1s' }}
-              className="animate-gyri-pulse"
-            />
-            
-            {/* Lower Left Gyri */}
-            <path 
-              d="M25 125 Q40 115, 55 130 Q70 145, 55 160 Q40 170, 25 155 Q10 140, 25 125" 
-              fill="none" 
-              stroke="#A070A0" 
-              strokeWidth="2.5"
-              strokeLinecap="round"
-              style={{ animationDelay: '0.9s' }}
-              className="animate-gyri-pulse"
             />
             <path 
-              d="M50 140 Q65 130, 80 145 Q95 160, 80 175 Q65 185, 50 170 Q35 155, 50 140" 
+              d="M30 150 Q35 145, 40 150 T50 150 T60 150 T70 150" 
               fill="none" 
-              stroke="#B585A8" 
-              strokeWidth="2"
+              stroke="#9060A0" 
+              strokeWidth="3.5"
               strokeLinecap="round"
-              style={{ animationDelay: '1.4s' }}
-              className="animate-gyri-pulse"
-            />
-            
-            {/* Lower Middle Gyri */}
-            <path 
-              d="M90 130 Q105 120, 120 135 Q135 150, 120 165 Q105 175, 90 160 Q75 145, 90 130" 
-              fill="none" 
-              stroke="#C090B0" 
-              strokeWidth="2.5"
-              strokeLinecap="round"
-              style={{ animationDelay: '0.5s' }}
-              className="animate-gyri-pulse"
-            />
-            
-            {/* Lower Right Gyri */}
-            <path 
-              d="M130 135 Q145 125, 160 140 Q175 155, 160 170 Q145 180, 130 165 Q115 150, 130 135" 
-              fill="none" 
-              stroke="#A878A0" 
-              strokeWidth="2.5"
-              strokeLinecap="round"
-              style={{ animationDelay: '1.3s' }}
-              className="animate-gyri-pulse"
             />
             <path 
-              d="M155 120 Q170 110, 180 125 Q190 140, 175 150 Q160 160, 150 145 Q140 130, 155 120" 
+              d="M40 165 Q45 160, 50 165 T60 165 T70 165" 
               fill="none" 
-              stroke="#B080A8" 
-              strokeWidth="2"
+              stroke="#A870B0" 
+              strokeWidth="3"
               strokeLinecap="round"
-              style={{ animationDelay: '0.7s' }}
-              className="animate-gyri-pulse"
             />
 
-            {/* Additional small curly details */}
-            <path d="M35 75 Q42 68, 48 75 Q54 82, 48 88" fill="none" stroke="#9868A0" strokeWidth="1.5" strokeLinecap="round" />
-            <path d="M145 60 Q152 53, 158 60 Q164 67, 158 73" fill="none" stroke="#A070A0" strokeWidth="1.5" strokeLinecap="round" />
-            <path d="M105 50 Q112 43, 118 50 Q124 57, 118 63" fill="none" stroke="#B585A8" strokeWidth="1.5" strokeLinecap="round" />
-            <path d="M65 110 Q72 103, 78 110 Q84 117, 78 123" fill="none" stroke="#C090B0" strokeWidth="1.5" strokeLinecap="round" />
-            <path d="M120 155 Q127 148, 133 155 Q139 162, 133 168" fill="none" stroke="#A878A0" strokeWidth="1.5" strokeLinecap="round" />
+            {/* Right Hemisphere - Wavy Lines */}
+            <path 
+              d="M140 30 Q145 25, 150 30 T160 30 T170 30 T180 30" 
+              fill="none" 
+              stroke="#9060A0" 
+              strokeWidth="3.5"
+              strokeLinecap="round"
+            />
+            <path 
+              d="M135 45 Q140 40, 145 45 T155 45 T165 45 T175 45 T185 45" 
+              fill="none" 
+              stroke="#A070A8" 
+              strokeWidth="3"
+              strokeLinecap="round"
+            />
+            <path 
+              d="M130 60 Q135 55, 140 60 T150 60 T160 60 T170 60 T180 60" 
+              fill="none" 
+              stroke="#9060A0" 
+              strokeWidth="3.5"
+              strokeLinecap="round"
+            />
+            <path 
+              d="M145 75 Q150 70, 155 75 T165 75 T175 75 T185 75" 
+              fill="none" 
+              stroke="#A870B0" 
+              strokeWidth="3"
+              strokeLinecap="round"
+            />
+            <path 
+              d="M140 90 Q145 85, 150 90 T160 90 T170 90 T180 90 T190 90" 
+              fill="none" 
+              stroke="#9060A0" 
+              strokeWidth="3.5"
+              strokeLinecap="round"
+            />
+            <path 
+              d="M145 105 Q150 100, 155 105 T165 105 T175 105 T185 105" 
+              fill="none" 
+              stroke="#A070A8" 
+              strokeWidth="3"
+              strokeLinecap="round"
+            />
+            <path 
+              d="M140 120 Q145 115, 150 120 T160 120 T170 120 T180 120" 
+              fill="none" 
+              stroke="#9868A0" 
+              strokeWidth="3.5"
+              strokeLinecap="round"
+            />
+            <path 
+              d="M135 135 Q140 130, 145 135 T155 135 T165 135 T175 135" 
+              fill="none" 
+              stroke="#A070A8" 
+              strokeWidth="3"
+              strokeLinecap="round"
+            />
+            <path 
+              d="M130 150 Q135 145, 140 150 T150 150 T160 150 T170 150" 
+              fill="none" 
+              stroke="#9060A0" 
+              strokeWidth="3.5"
+              strokeLinecap="round"
+            />
+            <path 
+              d="M130 165 Q135 160, 140 165 T150 165 T160 165" 
+              fill="none" 
+              stroke="#A870B0" 
+              strokeWidth="3"
+              strokeLinecap="round"
+            />
+
+            {/* Central Sulcus - Vertical Division */}
+            <path 
+              d="M100 20 Q98 40, 100 60 T100 80 T100 100 T100 120 T100 140 T100 160" 
+              fill="none" 
+              stroke="#8050A0" 
+              strokeWidth="4"
+              strokeLinecap="round"
+            />
           </svg>
 
           {/* Additional 3D depth shadows for gyri */}
@@ -263,7 +244,7 @@ export default function BrainCharacter() {
             >
               <div 
                 ref={leftPupilRef}
-                className="w-6 h-6 md:w-8 md:h-8 lg:w-10 lg:h-10 rounded-full absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 transition-transform duration-100"
+                className="w-6 h-6 md:w-8 md:h-8 lg:w-10 lg:h-10 rounded-full absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 transition-transform duration-75 ease-out"
                 style={{
                   background: 'radial-gradient(circle at 30% 30%, #4A3A3A, #1A1A1A)'
                 }}
@@ -281,7 +262,7 @@ export default function BrainCharacter() {
             >
               <div 
                 ref={rightPupilRef}
-                className="w-6 h-6 md:w-8 md:h-8 lg:w-10 lg:h-10 rounded-full absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 transition-transform duration-100"
+                className="w-6 h-6 md:w-8 md:h-8 lg:w-10 lg:h-10 rounded-full absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 transition-transform duration-75 ease-out"
                 style={{
                   background: 'radial-gradient(circle at 30% 30%, #4A3A3A, #1A1A1A)'
                 }}
